@@ -1,32 +1,103 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <section>
+    <header>
+      <h1>My Friends</h1>
+    </header>
+<van-cell-group>
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" label="描述信息" />
+</van-cell-group>
+    <van-button type="primary">主要按钮</van-button>
+<van-button type="info">信息按钮</van-button>
+<van-button type="default">默认按钮</van-button>
+<van-button type="warning">警告按钮</van-button>
+<van-button type="danger">危险按钮</van-button>
+    <!-- <ul>
+      <friend-contact></friend-contact>
+      <friend-contact></friend-contact>
+    </ul> -->
+  </section>
 </template>
 
+<script>
+
+
+export default {
+  data() {
+    return {
+      friends: [
+        {
+          id: "manuel",
+          name: "Manuel Lorenz",
+          phone: "0123 45678 90",
+          email: "manuel@localhost.com",
+        },
+        {
+          id: "julie",
+          name: "Julie Jones",
+          phone: "0987 654421 21",
+          email: "julie@localhost.com",
+        },
+      ],
+    };
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: "Jost", sans-serif;
+}
+body {
+  margin: 0;
+}
+header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin: 3rem auto;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #58004d;
+  color: white;
   text-align: center;
-  color: #2c3e50;
+  width: 90%;
+  max-width: 40rem;
 }
-
-#nav {
-  padding: 30px;
+#app ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+#app li {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin: 1rem auto;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  width: 90%;
+  max-width: 40rem;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+#app h2 {
+  font-size: 2rem;
+  border-bottom: 4px solid #ccc;
+  color: #58004d;
+  margin: 0 0 1rem 0;
+}
+#app button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid #ff0077;
+  background-color: #ff0077;
+  color: white;
+  padding: 0.05rem 1rem;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+}
+#app button:hover,
+#app button:active {
+  background-color: #ec3169;
+  border-color: #ec3169;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
 </style>
