@@ -1,4 +1,4 @@
-# vue-2021
+# vue-Vuex 
 
 ## Project setup
 ```

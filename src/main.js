@@ -1,19 +1,28 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import Vant from 'vant';
-import 'vant/lib/index.css';
+import { createApp } from 'vue';
+import {createStore } from 'vuex';
 
+import App from './App.vue';
 
-Vue.config.productionTip = false
-Vue.use(Vant);
-new Vue({
-  Vant,
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+const store = createStore({
+  state(){
+      return {
+        counter: 0
+      };
+  },
+  mutations: {
+      increment(state) {
+        state.counter = state.counter +2;
+        //   state.counter++;
+      },
+      increase(state, payload) {
+        state.counter =  state.counter + payload.value;
+      }
+  }
 
+});
 
+const app = createApp(App);
 
+app.use(store);
+
+app.mount('#app');
