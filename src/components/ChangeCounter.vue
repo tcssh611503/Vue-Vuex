@@ -1,24 +1,21 @@
 <template>
-  <button @click="addOne" >Add 10</button>
+  <button @click="inc">Add 2</button>
+  <!-- <button @click="increase({value: 11})">Add 11</button> -->
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
-  computed: {
-    counter() {
-      return this.$store.state.counter;
-    }
-  },
   methods: {
-    addOne(){
-      // this.$store.state.counter++;
-        // this.$store.state.counter = this.$store.state.counter +11;
-      // this.$store.commit('increase', {value: 10});
-
-      this.$store.dispatch('increment');
-
-    }
-  },
-    
+    // addOne() {
+    //   this.$store.dispatch('increment');
+    // }
+    // ...mapActions(['increment', 'increase'])
+    ...mapActions({
+      inc: 'increment',
+      increase: 'increase'
+    })
+  }
 }
 </script>
