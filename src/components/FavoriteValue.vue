@@ -1,22 +1,15 @@
 <template>
-        <h3>{{counter}}</h3>
+        <!-- <p>{{counter}}</p> -->
+        <p>We do more...</p>
 </template>
 
 <script>
-// import { mapGetters} from 'vuex'
-
-
 export default {
   computed: {
-
-    // counter() {
-    //   // return this.$store.state.counter;
-    //   return this.$store.getters.finalCounter;
-    // }
-    // mutation
-
-
-
+    counter() {
+    //   return this.$store.state.counter;
+        return this.$store.getters.finalCounter;
+    }
   },
   methods: {
     addOne(){

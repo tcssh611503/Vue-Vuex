@@ -3,6 +3,7 @@
     <!-- <h3>{{counter}}</h3>-->  
     <button @click="addOne" >Add 2</button> 
     <the-counter></the-counter>
+    <favorite-value></favorite-value>
     <change-counter></change-counter>
   </base-container>
 </template>
@@ -11,14 +12,15 @@
 import BaseContainer from './components/BaseContainer.vue';
 import TheCounter from './components/TheCounter.vue';
 import ChangeCounter from './components/ChangeCounter.vue';
-
+import FavoriteValue from './components/FavoriteValue.vue';
 
 
 export default {
   components: {
     BaseContainer,
     TheCounter,
-    ChangeCounter
+    ChangeCounter,
+    FavoriteValue
   },
   // computed: {
   //   counter() {
@@ -30,7 +32,13 @@ export default {
       // this.$store.state.counter++;
       // this.$store.state.counter = this.$store.state.counter +11;
       // this.$store.commit('increase', {value: 2});
-      this.$store.commit({
+
+      // this.$store.commit({
+      //   type: 'increase',
+      //   value: 10
+      // });
+
+      this.$store.dispatch({
         type: 'increase',
         value: 10
       });
